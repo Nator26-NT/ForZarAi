@@ -72,118 +72,118 @@ PATTERN_SETTINGS = {
     "pattern_alignment_check": True
 }
 
-# FIXED 5 PIP STRUCTURE - All pairs and timeframes
+# FIXED PIP STRUCTURE - All pairs and timeframes: 7 SL, 10 TP
 PIP_TARGETS = {
-    # All timeframes use 5 pips for both SL and TP
+    # All timeframes use 7 pips SL and 10 pips TP
     "1min": {
-        "sl_pips": 5, 
-        "tp_pips": 5, 
+        "sl_pips": 7, 
+        "tp_pips": 10, 
         "description": "Quick Scalping", 
         "hold_period": "1-5 min",
-        "risk_reward": "1:1",
+        "risk_reward": "1:1.43",
         "volatility_factor": 1.0,
         "max_adjustment": 1.0
     },
     "5min": {
-        "sl_pips": 5, 
-        "tp_pips": 5, 
+        "sl_pips": 7, 
+        "tp_pips": 10, 
         "description": "Quick Scalping", 
         "hold_period": "5-15 min",
-        "risk_reward": "1:1",
+        "risk_reward": "1:1.43",
         "volatility_factor": 1.0,
         "max_adjustment": 1.0
     },
     "15min": {
-        "sl_pips": 5, 
-        "tp_pips": 5, 
+        "sl_pips": 7, 
+        "tp_pips": 10, 
         "description": "Rapid Momentum", 
         "hold_period": "15-30 min",
-        "risk_reward": "1:1",
+        "risk_reward": "1:1.43",
         "volatility_factor": 1.0,
         "max_adjustment": 1.0
     },
     "30min": {
-        "sl_pips": 5, 
-        "tp_pips": 5, 
+        "sl_pips": 7, 
+        "tp_pips": 10, 
         "description": "Fast Swing", 
         "hold_period": "30-60 min",
-        "risk_reward": "1:1",
+        "risk_reward": "1:1.43",
         "volatility_factor": 1.0,
         "max_adjustment": 1.0
     },
     "1h": {
-        "sl_pips": 5, 
-        "tp_pips": 5, 
+        "sl_pips": 7, 
+        "tp_pips": 10, 
         "description": "Swing Setup", 
         "hold_period": "1-2 hours",
-        "risk_reward": "1:1",
+        "risk_reward": "1:1.43",
         "volatility_factor": 1.0,
         "max_adjustment": 1.0
     },
     "4h": {
-        "sl_pips": 5, 
-        "tp_pips": 5, 
+        "sl_pips": 7, 
+        "tp_pips": 10, 
         "description": "Swing Trade", 
         "hold_period": "4-8 hours",
-        "risk_reward": "1:1",
+        "risk_reward": "1:1.43",
         "volatility_factor": 1.0,
         "max_adjustment": 1.0
     },
     "1day": {
-        "sl_pips": 5, 
-        "tp_pips": 5, 
+        "sl_pips": 7, 
+        "tp_pips": 10, 
         "description": "Position Trade", 
         "hold_period": "1-2 days",
-        "risk_reward": "1:1",
+        "risk_reward": "1:1.43",
         "volatility_factor": 1.0,
         "max_adjustment": 1.0
     },
     "1week": {
-        "sl_pips": 5, 
-        "tp_pips": 5, 
+        "sl_pips": 7, 
+        "tp_pips": 10, 
         "description": "Weekly Position", 
         "hold_period": "3-7 days",
-        "risk_reward": "1:1",
+        "risk_reward": "1:1.43",
         "volatility_factor": 1.0,
         "max_adjustment": 1.0
     },
     "1month": {
-        "sl_pips": 5, 
-        "tp_pips": 5, 
+        "sl_pips": 7, 
+        "tp_pips": 10, 
         "description": "Monthly Investment", 
         "hold_period": "2-4 weeks",
-        "risk_reward": "1:1",
+        "risk_reward": "1:1.43",
         "volatility_factor": 1.0,
         "max_adjustment": 1.0
     }
 }
 
-# Quick Trade PIP Targets (for risk_manager.py) - Also fixed at 5 pips
+# Quick Trade PIP Targets (for risk_manager.py) - Also fixed at 7 SL, 10 TP
 QUICK_TRADE_PIP_TARGETS = {
     "5min": {
-        "sl_pips": 5, 
-        "tp_pips": 5, 
+        "sl_pips": 7, 
+        "tp_pips": 10, 
         "description": "Quick Scalping", 
         "hold_period": "5-15 min",
-        "risk_reward": "1:1",
+        "risk_reward": "1:1.43",
         "volatility_factor": 1.0,
         "max_adjustment": 1.0
     },
     "15min": {
-        "sl_pips": 5, 
-        "tp_pips": 5, 
+        "sl_pips": 7, 
+        "tp_pips": 10, 
         "description": "Rapid Momentum", 
         "hold_period": "15-30 min",
-        "risk_reward": "1:1",
+        "risk_reward": "1:1.43",
         "volatility_factor": 1.0,
         "max_adjustment": 1.0
     },
     "30min": {
-        "sl_pips": 5, 
-        "tp_pips": 5, 
+        "sl_pips": 7, 
+        "tp_pips": 10, 
         "description": "Fast Swing", 
         "hold_period": "30-60 min",
-        "risk_reward": "1:1",
+        "risk_reward": "1:1.43",
         "volatility_factor": 1.0,
         "max_adjustment": 1.0
     }

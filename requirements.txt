@@ -5,4 +5,3 @@ scikit-learn>=1.4.0
 requests>=2.31.0
 yfinance>=0.2.18
 plotly>=5.18.0
-TA-Lib>=0.4.28

@@ -26,30 +26,30 @@ class AdvancedRiskManager:
     
     @staticmethod
     def get_tactical_pip_targets(timeframe: str, symbol: str, data: dict = None) -> dict:
-        """Get fixed 5 pip targets for all pairs and timeframes"""
+        """Get fixed 7 SL, 10 TP pip targets for all pairs and timeframes"""
         if timeframe not in PIP_TARGETS:
             timeframe = "1h"
         
         base_config = PIP_TARGETS[timeframe]
         
-        # Fixed 5 pips - no adjustments
+        # Fixed 7 SL, 10 TP - no adjustments
         return {
-            "sl_pips": 5.0,
-            "tp_pips": 5.0,
-            "pip_target": 5.0,
+            "sl_pips": 7.0,
+            "tp_pips": 10.0,
+            "pip_target": 10.0,
             "hold_period": base_config["hold_period"],
             "description": base_config["description"],
             "risk_reward": base_config["risk_reward"],
             "volatility_adjustment": 1.0,
             "pattern_adjustment": 1.0,
             "combined_adjustment": 1.0,
-            "base_sl": 5.0,
-            "base_tp": 5.0
+            "base_sl": 7.0,
+            "base_tp": 10.0
         }
     
     @staticmethod
     def calculate_tactical_tp_sl_levels(current_price: float, direction: int, timeframe: str, symbol: str, data: dict = None) -> dict:
-        """Calculate TP/SL levels with fixed 5 pip targets"""
+        """Calculate TP/SL levels with fixed 7 SL, 10 TP targets"""
         pip_config = AdvancedRiskManager.get_tactical_pip_targets(timeframe, symbol, data)
         
         stop_loss_pips = pip_config["sl_pips"]
@@ -105,7 +105,7 @@ class AdvancedRiskManager:
         if stop_loss_pips > 0:
             position_size = adjusted_risk / (stop_loss_pips * pip_value * 0.0001)
         else:
-            position_size = adjusted_risk / (5 * pip_value * 0.0001)  # Default 5 pip stop
+            position_size = adjusted_risk / (7 * pip_value * 0.0001)  # Default 7 pip stop
         
         # Convert to standard units (1000 units = 0.01 lot)
         position_units = int(position_size * 1000)
@@ -114,17 +114,17 @@ class AdvancedRiskManager:
 
     @staticmethod
     def get_quick_trade_pip_targets(timeframe: str, symbol: str, data: dict = None) -> dict:
-        """Get fixed 5 pip targets for quick trading"""
+        """Get fixed 7 SL, 10 TP pip targets for quick trading"""
         if timeframe not in QUICK_TRADE_PIP_TARGETS:
             timeframe = "5min"
         
         base_config = QUICK_TRADE_PIP_TARGETS[timeframe]
         
-        # Fixed 5 pips - no adjustments
+        # Fixed 7 SL, 10 TP - no adjustments
         return {
-            "sl_pips": 5.0,
-            "tp_pips": 5.0,
-            "pip_target": 5.0,
+            "sl_pips": 7.0,
+            "tp_pips": 10.0,
+            "pip_target": 10.0,
             "hold_period": base_config["hold_period"],
             "description": base_config["description"],
             "risk_reward": base_config["risk_reward"],
@@ -141,23 +141,23 @@ class AdvancedRiskManager:
 class RiskManager:
     @staticmethod
     def get_pip_targets(timeframe: str) -> dict:
-        """Get fixed 5 pip targets based on timeframe"""
+        """Get fixed 7 SL, 10 TP pip targets based on timeframe"""
         if timeframe not in PIP_TARGETS:
             timeframe = "1h"
         
         config = PIP_TARGETS[timeframe]
         
         return {
-            "sl_pips": 5.0,  # Fixed 5 pips
-            "tp_pips": 5.0,  # Fixed 5 pips
-            "pip_target": 5.0,
+            "sl_pips": 7.0,  # Fixed 7 pips SL
+            "tp_pips": 10.0,  # Fixed 10 pips TP
+            "pip_target": 10.0,
             "hold_period": config["hold_period"],
             "description": config["description"]
         }
     
     @staticmethod
     def calculate_tp_sl_levels(current_price: float, direction: int, timeframe: str) -> dict:
-        """Calculate TP/SL levels with fixed 5 pip values"""
+        """Calculate TP/SL levels with fixed 7 SL, 10 TP values"""
         pip_config = RiskManager.get_pip_targets(timeframe)
         
         stop_loss_pips = pip_config["sl_pips"]
